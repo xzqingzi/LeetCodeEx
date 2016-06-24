@@ -13,7 +13,7 @@ public:
                 //cout <<"i="<< i << endl;
                 //cout <<'1'<< new_s << endl;
                 if ((i> 0) && (i < numRows-1)){
-                //if ((i != 0) || (i != numRows-1)){ // Why this line doesnt work?
+                //if ((i != 0) && (i != numRows-1)){ 
                     //cout << 'k' << endl;
                     int m = j*(2*numRows-2)+2*(numRows-1)-i;
                     //cout << "m="<<m << endl;
