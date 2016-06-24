@@ -1,5 +1,2 @@
 # LeetCodeEx
-My exercises for Leetcode
-
-## Two Sum
-Finished on Sat. Jun 18.
+Exercise for Leetcode
