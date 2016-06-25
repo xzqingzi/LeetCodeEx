@@ -1,4 +1,4 @@
-class Solution {  // What is O(k) extra space
+class Solution {  // What is O(k) extra space, how?
 public:
     vector<int> getRow(int rowIndex) { //Input rowIndex, start from 0.
         vector<int> Row(rowIndex+1, 1);
