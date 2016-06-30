@@ -18,3 +18,26 @@ public:
         return out;
     }
 };
+
+
+// Better solution
+class Solution { // majorrity count > n/2, not equal 
+public:
+    int majorityElement(vector<int>& nums) {
+        int count = 1;
+        int maj = nums[0];
+        for (int i = 1; i<nums.size(); i++) { 
+            if (nums[i] == maj) {
+                count++;
+            }
+            else if (count == 0) { // only the digit with more # than previous majority could make count = 0
+                maj = nums[i];
+                count++;
+            }
+            else { 
+                count--;
+            } 
+        }
+        return maj;
+    }
+};

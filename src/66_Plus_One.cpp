@@ -14,3 +14,5 @@ public:
 };
 
 // how to use digits.begin() and .end() for index ?
+/* i =  digits.begin() ~ digits.end()-1 (The last bit is '\0', have no value, usually means the end of the string 
+ and at this time, i is pointer)
