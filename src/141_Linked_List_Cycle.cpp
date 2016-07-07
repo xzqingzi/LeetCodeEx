@@ -6,7 +6,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution { // Use two pointers, each time one goes one step, the other goes two steps
 public:
     bool hasCycle(ListNode *head) {
         if (!head) {return 0;}

@@ -10,7 +10,7 @@ class Solution {  //Why it is slow?
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode *head, *node;
-        head = new ListNode(0); // Define ?
+        head = new ListNode(0); // Dynamic allocated
         node = head;
         if (!l1 && !l2) {node->next = NULL;}
         while (l1 && l2 ) {
