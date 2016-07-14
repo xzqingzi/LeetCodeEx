@@ -1,3 +1,22 @@
+class Solution {
+public: 
+    void rotate(vector<int>& nums, int k) {  //Example 1234567
+        if(k%nums.size())
+        {
+            reverse(nums.begin(),nums.end());  //7654321 
+            reverse(nums.begin(),nums.begin()+k%nums.size()); //5674321
+            reverse(nums.begin()+k%nums.size(),nums.end()); //5671234
+        }
+    }
+};
+
+
+
+
+
+
+//Wrong answer
+
 class Solution {   // Time limit exceeded
 public:
     void rotate(vector<int>& nums, int k) {  

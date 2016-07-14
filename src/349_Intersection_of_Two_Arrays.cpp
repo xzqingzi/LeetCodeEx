@@ -30,7 +30,8 @@ public:
             }
             else {
                 if ( !outlist.size() || nums1[i] != outlist.back()) {  
-                    // Can NOT be (nums1[i] != outlist.back()||!outlist.size()) , cause runtime error, WHY?
+                    // Can NOT be (nums1[i] != outlist.back()||!outlist.size()) , cause runtime error, 
+                    //Or statment must check !outlist.size() first, 
                     outlist.push_back(nums1[i]);
                 }
                 i++;
