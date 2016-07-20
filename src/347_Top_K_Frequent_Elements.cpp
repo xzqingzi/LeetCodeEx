@@ -23,3 +23,24 @@ public:
         
     }
 };
+
+//Using priority_queue
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int> mymap;
+        for(int i=0; i<nums.size(); i++) {
+            mymap[nums[i]]++;
+        }
+        priority_queue<pair<int,int>> myqueue; //The first element is always the greatest of the elements it contains 
+        vector<int> output;
+        for(auto i: mymap) {
+            myqueue.push(make_pair(i.second,i.first));
+        }
+        while(output.size()<k) {
+            output.push_back(myqueue.top().second);
+            myqueue.pop();
+        }
+        return output;
+    }
+};
