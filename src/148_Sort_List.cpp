@@ -6,9 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+ //Merge Sort Method: 
 class Solution {
 private:
-    ListNode* findMid(ListNode* head) {
+    ListNode* findMid(ListNode* head) {  //Find the middle node
         ListNode *p1 = head, *p2 = head->next;
         while (p2 && p2->next) {
             p1 = p1->next;
@@ -16,9 +18,9 @@ private:
         }
         return p1;
     }
-    ListNode* merge(ListNode* h1, ListNode* h2) {
+    ListNode* merge(ListNode* h1, ListNode* h2) {  // Merge two sorted list
         ListNode *head, *p;
-        head = new ListNode(0);
+        head = new ListNode(0);  // new node // Dynamic allocated
         p = head;
         while(h1 && h2) {
             if (h1->val < h2->val) {
@@ -35,6 +37,7 @@ private:
         if (h2) p->next = h2;
         return head->next;
     }
+
 public:
     ListNode* sortList(ListNode* head) {
         if (head == NULL || head->next == NULL) return head;
@@ -44,7 +47,7 @@ public:
         ListNode* headr = sortList(h2->next);
         h2->next = NULL;
         ListNode* headl = sortList(head);
-        
+                
         return merge(headl, headr);
     }
 };

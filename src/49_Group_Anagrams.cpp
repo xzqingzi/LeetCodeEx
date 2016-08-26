@@ -7,9 +7,9 @@ public:
         int i = 0;
         for (string s : strs) {
             temp = s; 
-            sort(temp.begin(), temp.end());
+            sort(temp.begin(), temp.end()); // sort the string 
             if (!mymap.count(temp)) {
-                vector<string> in(1,s);
+                vector<string> in(1,s); //output is a matrix, the first level could only push into a vector
                 output.push_back(in);
                 mymap[temp] = i;
                 i++;

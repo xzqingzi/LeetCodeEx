@@ -9,7 +9,6 @@ public:
         
         for (int i=0; i<s.size()-sum/2; i++) {
             if (s[i] == s[i+1]) {
-                cout<<"k1"<<endl;
                 left = i;
                 right = i+1;
                 sum1 = 0;
@@ -20,12 +19,11 @@ public:
                 }
                 if (sum1>sum) {
                     sum = sum1;
-                    cout<<sum<<endl;
+                
                     outleft = left;
                 }
             }
             if (s[i] == s[i+2]) {
-                cout<<"k2"<<endl;
                 left = i;
                 right = i+2;
                 sum2 = 1;
@@ -36,12 +34,32 @@ public:
                 }
                 if (sum2>sum) {
                     sum = sum2;
-                    cout<<sum<<endl;
                     outleft = left;
                 }
             }
         }
         return s.substr(outleft+1, sum);
         
+    }
+};
+
+
+
+// DP draft
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        vector<vector<bool>> result(s.size(), vector<bool> (s.size(), 0));
+        DPcheck(result, s, 0, s.size()-1);
+        
+        
+    }
+    
+    void DPcheck(vector<vector<bool>>& result, string& s, int i, int j) {
+        if ( i == j ) result[i][j] = 1; return;
+        if (i+1 == j && s[i]==s[j]) result[i][j] = 1; return;        
+        DPcheck(result, s, i+1, j-1);        
+        if ( s[i] == s[j] && result[i+1][j-1] ) result[i][j] = 1;
+        return; 
     }
 };
