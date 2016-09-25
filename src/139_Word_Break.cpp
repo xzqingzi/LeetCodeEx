@@ -29,7 +29,7 @@ bool wordBreak(string s, unordered_set<string>& wordDict) {
     sub[0] = true;
     
     for (int i = 0; i < s.length(); i++){
-        if (!sub[i]) {continue;}
+        if (!sub[i]) {continue;} //jump through the intermediate part, start from the end of existed word
         for (string word : wordDict){
             int end = i + word.length();
             if(end > s.length() || sub[end]){

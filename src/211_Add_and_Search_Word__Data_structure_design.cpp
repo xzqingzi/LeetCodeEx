@@ -31,6 +31,7 @@ private:
         }
         return false;
     }
+    
 public:
     WordDictionary() {
         root = new TrieNode();

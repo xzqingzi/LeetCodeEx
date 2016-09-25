@@ -29,3 +29,5 @@ public:
         return p->val;       
     }
 };
+
+//Go through all the nodes, has runtime O(n)
